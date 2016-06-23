@@ -1,0 +1,40 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+form {
+  background-color: #BECBD2;
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  padding: 1rem;
+  border: 3px solid #333333;
+  border-radius: 0.5rem; }
+  form::after {
+    clear: both;
+    content: "";
+    display: block; }
+  form div {
+    display: block;
+    height: 5rem;
+    background-color: #E1E7EA;
+    border: 3px solid #5E686F;
+    margin: 1rem auto; }
+  form button {
+    display: table-cell;
+    width: 25%;
+    font-size: 1rem;
+    background-color: #A3B3BF;
+    padding: 1rem; }
+    form button:focus {
+      outline: none; }
+    form button.operator {
+      margin-right: 0; }
+
+/*# sourceMappingURL=main.css.map */

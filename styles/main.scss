@@ -1,0 +1,32 @@
+@import "bourbon/bourbon";
+$grid-columns: 4;
+@import "neat/neat";
+
+form{
+  background-color: #BECBD2;
+  @include outer-container(60%);
+  @include fill-parent();
+  @include row(table);
+  padding: 1rem;
+  border: 3px solid #333333;
+  border-radius: 0.5rem;
+  div{
+    display: block;
+    height: 5rem;
+    background-color: #E1E7EA;
+    border: 3px solid #5E686F;
+    margin: 1rem auto;
+  }
+  button{
+    @include span-columns(1);
+    font-size: 1rem;
+    background-color: #A3B3BF;
+    padding: 1rem;
+    &:focus{
+      outline: none;
+    }
+    &.operator{
+      @include omega();
+    }
+  }
+}
