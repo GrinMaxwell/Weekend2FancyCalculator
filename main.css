@@ -36,5 +36,11 @@ form {
       outline: none; }
     form button.operator {
       margin-right: 0; }
+    form button.big {
+      display: table-cell;
+      width: 100%; }
+  form output {
+    font-size: 4rem;
+    font-family: 'Open Sans', sans-serif; }
 
 /*# sourceMappingURL=main.css.map */

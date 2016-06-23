@@ -28,5 +28,12 @@ form{
     &.operator{
       @include omega();
     }
+    &.big{
+      @include span-columns(4);
+    }
+  }
+  output{
+    font-size: 4rem;
+    font-family: 'Open Sans', sans-serif;
   }
 }
