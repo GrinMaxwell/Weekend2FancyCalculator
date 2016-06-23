@@ -14,7 +14,7 @@ var bPlus = document.getElementById('plus');
 var bMinus = document.getElementById('minus');
 var bDivide = document.getElementById('divide');
 var bMultiply = document.getElementById('multiply');
-var bEqual = document.getElementById('equal');
+var bEquals = document.getElementById('equals');
 var bClear = document.getElementById('clear');
 
 bOne.addEventListener('click', function(){
@@ -68,15 +68,60 @@ bClear.addEventListener('click', function(){
 document.querySelector('output').innerText = '';
 });
 
-// bEquals.addEventListener('click', function(){
-//   var equation = document.querySelector('output').innerText;
-//   var num1;
-//   var num2;
-//   for(i=0; i<equation.length; i++){
-//     if(isNaN(equation[i])){
+bEquals.addEventListener('click', function(){
+  var equation = document.querySelector('output').innerText;
+  var num1 = 0;
+  var num2 = 0;
+  var operation;
+  var prev = 0;
+  var answer;
+  for(i=0; i<equation.length; i++){
+    if(equation[i]==='+'){
+      num1 = Number(prev);
+      operation = equation[i];
+      console.log(prev);
+    } else if (equation[i]==='-') {
+      num1 = Number(prev);
+      operation = equation[i];
+    } else if (equation[i]==='/') {
+      num1 = Number(prev);
+      operation = equation[i];
+    } else if (equation[i]==='x') {
+      num1 = Number(prev);
+      operation = 'x';
+    } else if (num1 === 0) {
+      prev += equation[i];
+    } else if (num1 !== 0) {
+      num2 += equation[i];
+    } else {
+      document.querySelector('output').innerText = 'Error';
+    }
+  }
+  if(operation==='+'){
+    answer = num1 + Number(num2);
+  } else if (operation==='-') {
+    answer = num1 - Number(num2);
+  } else if (operation==='/') {
+    answer = num1 / Number(num2);
+  } else if (operation==='x') {
+    answer = num1 * Number(num2);
+  }
+  console.log(num1);
+  console.log(num2);
+  console.log(equation);
+  console.log(prev);
+
+  document.querySelector('output').innerText = answer;
+});
+
+
+
+
+
+
+
+
+
+
+
 //
-//     } else if (true) {
-//
-//     }
-//   }
-// });
