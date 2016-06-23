@@ -14,7 +14,7 @@
       1. variables for all the buttons
       2. event listeners for all the numbers and operators to add the button value to the output value (as a string)
       3. event listeners for special characters like clear and positive/negative
-      4. a ridiculous event listener for equals to basically mimic the eval() function
+      4. a ridiculous event listener for equals to basically mimic the eval() function (which we are not allowed to use)
         - save the current output value as the equation (still a string)
         - iterate through each character of the equation to check if it's an operator and then save that operator and everything thus far as the first number, then thereafter as the second number
         - check if the first number is negative (because the '-' first character coerces 0)
