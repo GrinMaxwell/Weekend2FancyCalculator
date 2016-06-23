@@ -68,6 +68,12 @@ bClear.addEventListener('click', function(){
 document.querySelector('output').innerText = '';
 });
 
+bNegative.addEventListener('click', function(){
+  var num = Number(document.querySelector('output').innerText);
+  num = -num;
+  document.querySelector('output').innerText = String(num);
+});
+
 bEquals.addEventListener('click', function(){
   var equation = document.querySelector('output').innerText;
   var num1 = 0;
@@ -76,19 +82,9 @@ bEquals.addEventListener('click', function(){
   var prev = 0;
   var answer;
   for(i=0; i<equation.length; i++){
-    if(equation[i]==='+'){
+    if(equation[i]==='+' || equation[i]==='-' || equation[i]==='/' || equation[i]==='x') {
       num1 = Number(prev);
       operation = equation[i];
-      console.log(prev);
-    } else if (equation[i]==='-') {
-      num1 = Number(prev);
-      operation = equation[i];
-    } else if (equation[i]==='/') {
-      num1 = Number(prev);
-      operation = equation[i];
-    } else if (equation[i]==='x') {
-      num1 = Number(prev);
-      operation = 'x';
     } else if (num1 === 0) {
       prev += equation[i];
     } else if (num1 !== 0) {
@@ -96,6 +92,9 @@ bEquals.addEventListener('click', function(){
     } else {
       document.querySelector('output').innerText = 'Error';
     }
+  }
+  if(equation[0] === '-'){
+    num1 = -num1;
   }
   if(operation==='+'){
     answer = num1 + Number(num2);
@@ -106,11 +105,6 @@ bEquals.addEventListener('click', function(){
   } else if (operation==='x') {
     answer = num1 * Number(num2);
   }
-  console.log(num1);
-  console.log(num2);
-  console.log(equation);
-  console.log(prev);
-
   document.querySelector('output').innerText = answer;
 });
 

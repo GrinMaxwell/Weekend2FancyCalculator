@@ -15,7 +15,8 @@ form {
   table-layout: fixed;
   padding: 1rem;
   border: 3px solid #333333;
-  border-radius: 0.5rem; }
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.3rem 0; }
   form::after {
     clear: both;
     content: "";
@@ -39,8 +40,10 @@ form {
     form button.big {
       display: table-cell;
       width: 100%; }
-  form output {
-    font-size: 4rem;
-    font-family: 'Open Sans', sans-serif; }
+  form .output {
+    font-size: 3.5rem;
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: scroll;
+    overflow-y: hidden; }
 
 /*# sourceMappingURL=main.css.map */
