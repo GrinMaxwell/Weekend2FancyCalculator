@@ -302,19 +302,23 @@ if (savFancyOp === false) {
   var equation = document.querySelector('output').innerText;
   var num1 = 0;
   var num2 = 0;
-  var operation;
-  var prev = 0;
+  var operation = 0;
+  var previous = 0;
   var answer;
   for(i=0; i<equation.length; i++){
-    if(equation[i]==='+' || equation[i]==='-' || equation[i]==='/' || equation[i]==='x') {
-      num1 = Number(prev);
+    if((equation[i]==='+' || equation[i]==='-' || equation[i]==='/' || equation[i]==='x') && operation === 0) {
+      num1 = Number(previous);
       operation = equation[i];
+    } else if ((equation[i]==='+' || equation[i]==='-' || equation[i]==='/' || equation[i]==='x') && operation !== 0) {
+      document.querySelector('output').innerText = 'Error!';
+      return;
     } else if (num1 === 0) {
-      prev += equation[i];
+      previous += equation[i];
     } else if (num1 !== 0) {
       num2 += equation[i];
     } else {
-      document.querySelector('output').innerText = 'Error';
+      document.querySelector('output').innerText = 'Error!';
+      return;
     }
   }
   if(equation[0] === '-'){
