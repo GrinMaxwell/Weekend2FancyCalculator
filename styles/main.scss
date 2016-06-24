@@ -1,5 +1,5 @@
 @import "bourbon/bourbon";
-$grid-columns: 4;
+$grid-columns: 24;
 @import "neat/neat";
 
 form{
@@ -19,7 +19,7 @@ form{
     margin: 1rem auto;
   }
   button{
-    @include span-columns(1);
+    @include span-columns(3);
     font-size: 1rem;
     background-color: #A3B3BF;
     padding: 1rem;
@@ -28,9 +28,21 @@ form{
     }
     &.operator{
       @include omega();
+      background-color: #65759F;
     }
     &.big{
       @include span-columns(4);
+    }
+    &.exponent{
+      font-size: 0.8rem;
+    }
+    &.root{
+      white-space: nowrap;
+      font-size: 0.6rem;
+    }
+    &.rootnum{
+      text-decoration: overline;
+      font-size: 0.5rem;
     }
   }
   .output{
@@ -39,4 +51,10 @@ form{
     overflow-x: scroll;
     overflow-y: hidden;
   }
+}
+#zero{
+  @include span-columns(6);
+}
+#clear{
+  @include span-columns(5);
 }
