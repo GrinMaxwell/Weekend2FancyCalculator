@@ -36,14 +36,6 @@ form{
     &.exponent{
       font-size: 0.8rem;
     }
-    &.root{
-      white-space: nowrap;
-      font-size: 0.6rem;
-    }
-    &.rootnum{
-      text-decoration: overline;
-      font-size: 0.5rem;
-    }
   }
   .output{
     font-size: 3.5rem;
@@ -57,4 +49,11 @@ form{
 }
 #clear{
   @include span-columns(5);
+}
+.root{
+  white-space: nowrap;
+  font-size: 0.7rem;
+}
+.h{
+  font-size: 0.8rem;
 }
